@@ -8,16 +8,20 @@
 
 import Foundation
 
-class Watcher {
-    
-    let pickedGenres: [MovieGenre]
-    let pickedActors: [Actor]
-    let pickedDecades: [Decade]
-    
-    init(pickedGenres: [MovieGenre], pickedActors: [Actor], pickedDecades: [Decade]) {
-        self.pickedGenres = pickedGenres
-        self.pickedActors = pickedActors
-        self.pickedDecades = pickedDecades
-    }
-    
+protocol Watcher {
+    static var pickedGenres: [MovieGenre] { get set }
+    static var pickedActors: [Actor] { get set }
+    static var pickedDecades: [Decade] { get set }
+}
+
+struct WatcherOne: Watcher {
+    static var pickedGenres = [MovieGenre]()
+    static var pickedActors = [Actor]()
+    static var pickedDecades = [Decade]()
+}
+
+struct WatcherTwo: Watcher {
+    static var pickedGenres = [MovieGenre]()
+    static var pickedActors = [Actor]()
+    static var pickedDecades = [Decade]()
 }

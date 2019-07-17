@@ -8,4 +8,18 @@
 
 import Foundation
 
-class Movie {}
+class Movie {
+    
+    let title: String
+    let posterPath: String
+    let overview: String
+    let releaseDate: String
+    
+    init(title: String, posterPath: String, overview: String, releaseDate: String) {
+        self.title = title
+        self.posterPath = posterPath
+        self.overview = overview
+        self.releaseDate = releaseDate
+    }
+    
+}

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Actor {
+class Actor: MovieData {
     
     let id: Int
     let profilePath: String
