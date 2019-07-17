@@ -12,7 +12,7 @@ class ActorDelegate: NSObject, UITableViewDelegate {
     
     // MARK: - Properties
     private let cellHeight: CGFloat = 80.0
-    private let amountOfActorsToBeSelected: Int = 5
+    private let amountOfActorsToBeSelected: Int = 2
     var actorController: ActorController?
     
     var actors = [ActorViewModel]()

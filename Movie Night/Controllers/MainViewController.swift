@@ -77,6 +77,8 @@ class MainViewController: UIViewController {
         WatcherTwo.pickedDecades = []
         self.firstWatcherButton.setBackgroundImage(CompletedButton.notcompleted.image, for: .normal)
         self.secondWatcherButton.setBackgroundImage(CompletedButton.notcompleted.image, for: .normal)
+        self.resultsButton.isEnabled = false
+        self.resultsButton.isHidden = true
         clearBarButton.isEnabled = false
     }
     

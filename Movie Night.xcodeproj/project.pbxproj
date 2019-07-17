@@ -41,6 +41,9 @@
 		80EB9A3622DE0A9100F53D05 /* MovieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB9A3522DE0A9100F53D05 /* MovieController.swift */; };
 		80EB9A3822DEFB8D00F53D05 /* MovieDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB9A3722DEFB8D00F53D05 /* MovieDelegate.swift */; };
 		80EB9A3A22DEFC7400F53D05 /* MovieDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB9A3922DEFC7400F53D05 /* MovieDatasource.swift */; };
+		80EB9A3D22DF192A00F53D05 /* JSONDowloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB9A3C22DF192A00F53D05 /* JSONDowloader.swift */; };
+		80EB9A4022DF6A1900F53D05 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB9A3F22DF6A1900F53D05 /* Endpoint.swift */; };
+		80EB9A4222DF6D5900F53D05 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB9A4122DF6D5900F53D05 /* Secrets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +83,9 @@
 		80EB9A3522DE0A9100F53D05 /* MovieController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieController.swift; sourceTree = "<group>"; };
 		80EB9A3722DEFB8D00F53D05 /* MovieDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDelegate.swift; sourceTree = "<group>"; };
 		80EB9A3922DEFC7400F53D05 /* MovieDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDatasource.swift; sourceTree = "<group>"; };
+		80EB9A3C22DF192A00F53D05 /* JSONDowloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDowloader.swift; sourceTree = "<group>"; };
+		80EB9A3F22DF6A1900F53D05 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		80EB9A4122DF6D5900F53D05 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +118,7 @@
 		80BF3F9E22D265C8006492E5 /* Movie Night */ = {
 			isa = PBXGroup;
 			children = (
+				80EB9A3B22DF190900F53D05 /* Networking */,
 				80BF3FC522DB1ECB006492E5 /* Movie Data */,
 				80BF3FC022DA5161006492E5 /* MovieMatcher */,
 				80BF3FB222D85A8A006492E5 /* Models */,
@@ -223,6 +230,24 @@
 			path = Movie;
 			sourceTree = "<group>";
 		};
+		80EB9A3B22DF190900F53D05 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				80EB9A4122DF6D5900F53D05 /* Secrets.swift */,
+				80EB9A3C22DF192A00F53D05 /* JSONDowloader.swift */,
+				80EB9A3E22DF6A0900F53D05 /* Endpoint */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		80EB9A3E22DF6A0900F53D05 /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				80EB9A3F22DF6A1900F53D05 /* Endpoint.swift */,
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -299,10 +324,12 @@
 				80BF3FC922DB2067006492E5 /* MovieData.swift in Sources */,
 				80EB9A2B22DDC19700F53D05 /* DecadeDatasource.swift in Sources */,
 				80BF3FC722DB1FE4006492E5 /* GenreDatasource.swift in Sources */,
+				80EB9A4222DF6D5900F53D05 /* Secrets.swift in Sources */,
 				80BF3FBD22D9D549006492E5 /* GenreController.swift in Sources */,
 				80EB9A2222DDADD700F53D05 /* DecadeController.swift in Sources */,
 				80EB9A2922DDB68500F53D05 /* DecadeViewModel.swift in Sources */,
 				80BF3FDD22DCEC3F006492E5 /* ActorDatasource.swift in Sources */,
+				80EB9A3D22DF192A00F53D05 /* JSONDowloader.swift in Sources */,
 				80BF3FC422DA55EE006492E5 /* Stub.swift in Sources */,
 				80BF3FBA22D9D140006492E5 /* Watcher.swift in Sources */,
 				80BF3FD022DC5F04006492E5 /* GenreDelegate.swift in Sources */,
@@ -324,6 +351,7 @@
 				80BF3FCB22DB2545006492E5 /* ActorController.swift in Sources */,
 				80BF3FB622D85BDE006492E5 /* Actor.swift in Sources */,
 				80BF3FBF22DA4DE6006492E5 /* Movie.swift in Sources */,
+				80EB9A4022DF6A1900F53D05 /* Endpoint.swift in Sources */,
 				80BF3FB822D85EB1006492E5 /* Decade.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

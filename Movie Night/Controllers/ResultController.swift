@@ -18,6 +18,13 @@ class ResultController: UITableViewController {
         
         // Setup
         setupTableview()
+        
+        print("Common Genres:")
+        print(MovieMatcher.getCommonGenres().map({ $0.name }))
+        print("Common Actors:")
+        print(MovieMatcher.getCommonActors().map({ $0.name }))
+        print("Common Decades:")
+        print(MovieMatcher.getCommonDecades().map({ $0.name }))
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

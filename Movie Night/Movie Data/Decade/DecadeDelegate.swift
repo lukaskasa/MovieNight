@@ -13,7 +13,7 @@ class DecadeDelegate: NSObject, UITableViewDelegate {
     // MARK: - Properties
     
     private let cellHeight: CGFloat = 60.0
-    private let amountOfDecadesToBeSelected: Int = 3
+    private let amountOfDecadesToBeSelected: Int = 2
     var decadeController: DecadeController?
     var decades = [DecadeViewModel]()
     

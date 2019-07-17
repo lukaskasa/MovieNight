@@ -12,7 +12,7 @@ import UIKit
 class GenreDelegate: NSObject, UITableViewDelegate {
     
     private let cellHeight: CGFloat = 60.0
-    private let amountOfGenresToBeSelected: Int = 5
+    private let amountOfGenresToBeSelected: Int = 2
     var genreController: GenreController?
     var genres = [GenreViewModel]()
     

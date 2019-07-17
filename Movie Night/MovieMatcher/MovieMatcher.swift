@@ -22,4 +22,28 @@ class MovieMatcher {
         return commonGenres
     }
     
+    static func getCommonActors() -> [Actor] {
+        var commonActors = [Actor]()
+        
+        for actor in WatcherOne.pickedActors {
+            if WatcherTwo.pickedActors.contains(where: { $0.id == actor.id }) {
+                commonActors.append(actor)
+            }
+        }
+        
+        return commonActors
+    }
+    
+    static func getCommonDecades() -> [Decade] {
+        var commonDecades = [Decade]()
+        
+        for decade in WatcherOne.pickedDecades {
+            if WatcherTwo.pickedDecades.contains(where: { $0.startDate == decade.startDate }) {
+                commonDecades.append(decade)
+            }
+        }
+        
+        return commonDecades
+    }
+    
 }

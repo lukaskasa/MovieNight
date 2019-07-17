@@ -337,7 +337,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems>
-                        <barButtonItem title="0 of 5 selected" width="437.66666666666669" id="Eyh-54-oWL">
+                        <barButtonItem width="437.66666666666669" id="Eyh-54-oWL">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                     </toolbarItems>
@@ -415,7 +415,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems>
-                        <barButtonItem title="0 of 5 selected" width="428.66666666666669" id="myq-oS-fEG">
+                        <barButtonItem width="428.66666666666669" id="myq-oS-fEG">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                     </toolbarItems>
@@ -488,7 +488,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems>
-                        <barButtonItem title="0 of 3 selected" id="idV-jO-emu">
+                        <barButtonItem id="idV-jO-emu">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                     </toolbarItems>
