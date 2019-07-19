@@ -15,19 +15,27 @@ class GenreController: UITableViewController {
     @IBOutlet weak var stateBarButtonItem: UIBarButtonItem!
     
     // MARK: - Properties
-    let dataSource = GenreDatasource(data: Stub.genres)
-    let delegate = GenreDelegate(data: Stub.genres)
+    let client = MovieDBAPIClient()
+    var dataSource: GenreDatasource?
+    var delegate: GenreDelegate?
     
     var mainController: MainViewController?
     
     var firstWatcher: Bool = false
+    
+    var genres: [MovieGenre]? {
+        didSet {
+            dataSource = GenreDatasource(genres: genres!)
+            delegate = GenreDelegate(allGenres: genres!)
+            setupTableview()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Setup
         disableNavigation()
-        setupTableview()
         
         
         stateBarButtonItem.width = view.frame.size.width
@@ -36,12 +44,26 @@ class GenreController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        tableView.reloadData()
         self.navigationController?.setToolbarHidden(false, animated: false)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let actorController = segue.destination as! ActorController
-        actorController.pickedGenres = delegate.selectedGenres
+        
+        client.getActors { actors, error in
+            
+            if let actors = actors {
+                actorController.actors = actors.results
+            }
+            
+            if error != nil {
+                print(error!.localizedDescription)
+            }
+            
+        }
+        
+        actorController.pickedGenres = delegate!.selectedGenres
         actorController.firstWatcher = firstWatcher
     }
     
@@ -54,8 +76,9 @@ class GenreController: UITableViewController {
     func setupTableview() {
         tableView.allowsMultipleSelection = true
         tableView.delegate = delegate
-        delegate.genreController = self
+        delegate!.genreController = self
         tableView.dataSource = dataSource
+        tableView.reloadData()
     }
     
     func enableNavigation() {

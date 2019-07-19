@@ -11,10 +11,10 @@ import UIKit
 
 class GenreDatasource: NSObject, UITableViewDataSource {
     
-    private var data: [MovieGenre]
+    private var genres: [MovieGenre]
     
-    init(data: [MovieGenre]) {
-        self.data = data
+    init(genres: [MovieGenre]) {
+        self.genres = genres
     }
     
     // MARK: - Data Source Methods
@@ -24,13 +24,13 @@ class GenreDatasource: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return genres.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: GenreCell.reuseIdentifier, for: indexPath) as! GenreCell
         
-        let genre = data[indexPath.row]
+        let genre = genres[indexPath.row]
         let viewModel = GenreViewModel(genre: genre)
         cell.genreLabel.text = viewModel.name
         

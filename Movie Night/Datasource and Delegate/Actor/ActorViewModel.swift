@@ -7,16 +7,20 @@
 //
 
 import Foundation
+import UIKit
 
-class ActorViewModel {
+struct ActorViewModel {
     /// Properties
     var id: Int
+    var profilePath: String
     var name: String
     var isSelected: Bool = false
+    var profileImage: UIImage
     
     init(actor: Actor) {
         self.id = actor.id
+        self.profilePath = actor.profilePath
+        self.profileImage = actor.downloaded == .downloaded ? actor.profileImage! : UIImage(imageLiteralResourceName: "boy")
         self.name = actor.name
     }
-    
 }

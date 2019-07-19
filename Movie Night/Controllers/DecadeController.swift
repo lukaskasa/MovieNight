@@ -13,8 +13,8 @@ class DecadeController: UITableViewController {
     @IBOutlet weak var finishBarButton: UIBarButtonItem!
     @IBOutlet weak var stateBarButtonItem: UIBarButtonItem!
     
-    let delegate = DecadeDelegate(data: Stub.decades)
-    let dataSource = DecadeDatasource(data: Stub.decades)
+    let delegate = DecadeDelegate(data: Decade.allCases)
+    let dataSource = DecadeDatasource(data: Decade.allCases)
     
     var pickedGenres = [MovieGenre]()
     var pickedActors = [Actor]()

@@ -33,4 +33,8 @@ class ActorCell: UITableViewCell {
         self.backgroundColor = selected ? selectColor : UIColor.white
     }
 
+    func configure(from viewModel: ActorViewModel) {
+        actorName.text = viewModel.name
+        actorImage.image = viewModel.profileImage
+    }
 }

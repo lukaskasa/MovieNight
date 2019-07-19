@@ -12,7 +12,7 @@ import UIKit
 class GenreDelegate: NSObject, UITableViewDelegate {
     
     private let cellHeight: CGFloat = 60.0
-    private let amountOfGenresToBeSelected: Int = 2
+    private let amountOfGenresToBeSelected: Int = 5
     var genreController: GenreController?
     var genres = [GenreViewModel]()
     
@@ -21,10 +21,10 @@ class GenreDelegate: NSObject, UITableViewDelegate {
         return selected.map({ return MovieGenre(id: $0.id, name: $0.name) })
     }
     
-    init(data: [MovieGenre]) {
-        genres = data.map{GenreViewModel(genre: $0)}
+    init(allGenres: [MovieGenre]) {
+        genres = allGenres.map{GenreViewModel(genre: $0)}
     }
-    
+
     // MARK: - Tableview Delegate Methods
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

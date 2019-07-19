@@ -29,5 +29,11 @@ class MovieCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func configure(from viewModel: MoviewViewModel) {
+        posterImage.image = viewModel.posterImage
+        movieTitleLabel.text = viewModel.title
+        movieReleaseYearLabel.text = viewModel.year
+    }
 
 }

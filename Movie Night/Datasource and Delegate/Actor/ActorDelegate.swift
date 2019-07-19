@@ -12,14 +12,14 @@ class ActorDelegate: NSObject, UITableViewDelegate {
     
     // MARK: - Properties
     private let cellHeight: CGFloat = 80.0
-    private let amountOfActorsToBeSelected: Int = 2
+    private let amountOfActorsToBeSelected: Int = 5
     var actorController: ActorController?
     
     var actors = [ActorViewModel]()
     
     var selectedActors: [Actor] {
         let selected = actors.filter { $0.isSelected == true }
-        return selected.map { return Actor(id: $0.id, profilePath: "", name: $0.name) }
+        return selected.map { return Actor(id: $0.id, profilePath: $0.profilePath, name: $0.name) }
     }
     
     init(data: [Actor]) {

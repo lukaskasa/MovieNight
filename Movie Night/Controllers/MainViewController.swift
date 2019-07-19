@@ -31,16 +31,20 @@ class MainViewController: UIViewController {
     @IBOutlet weak var resultsButton: UIButton!
     
     // MARK: - Properties
-//    var firstWatcher: Watcher?
-//    var secondWatcher: Watcher?
+    let client = MovieDBAPIClient()
+    let matcher = MovieMatcher()
     var genreController: GenreController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         print("First Watcher:")
+        dump(WatcherOne.pickedGenres)
+        dump(WatcherOne.pickedActors)
         dump(WatcherOne.pickedDecades)
         print("Second Watcher:")
+        dump(WatcherTwo.pickedGenres)
+        dump(WatcherTwo.pickedActors)
         dump(WatcherTwo.pickedDecades)
         // Set up
         genreController?.mainController = self
@@ -55,26 +59,57 @@ class MainViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "selectForFirstWatcher" {
+        
+        if segue.identifier == "selectForFirstWatcher" || segue.identifier == "selectForSecondWatcher" {
             let genreController = segue.destination as! GenreController
-            genreController.firstWatcher = true
-        } else if segue.identifier == "selectForSecondWatcher" {
-            let genreController = segue.destination as! GenreController
-            genreController.firstWatcher = false
+            client.getGenres { genres, error in
+                
+                if let genres = genres {
+                    genreController.genres = genres["genres"]
+                }
+                
+                if error != nil {
+                    print(error!.localizedDescription)
+                }
+                
+                switch segue.identifier {
+                case "selectForFirstWatcher": genreController.firstWatcher = true
+                case "selectForSecondWatcher": genreController.firstWatcher = false
+                default: return
+                }
+                
+            }
         } else if segue.identifier == "showResults" {
+            let resultsController = segue.destination as! ResultController
+            let genres = MovieMatcher.getCommonGenres().map({ "\($0.id)" }).joined(separator: "|")
+            let cast = MovieMatcher.getCommonActors().map({ "\($0.id)" }).joined(separator: "|")
+            let startDate = matcher.getStartDate()
+            let endDate = matcher.getEndDate()
             
+            client.getMovies(genres: genres, cast: cast, startDate: startDate, endDate: endDate) { movies, error in
+                
+                if let movies = movies {
+                    resultsController.movies = movies.results
+                }
+                
+                if error != nil {
+                    print(error!.localizedDescription)
+                }
+                
+            }
         }
+
     }
     
     // MARK: - Actions
     
     @IBAction func clearSelections(_ sender: Any) {
-        WatcherOne.pickedGenres = []
-        WatcherOne.pickedActors = []
-        WatcherOne.pickedDecades = []
-        WatcherTwo.pickedGenres = []
-        WatcherTwo.pickedActors = []
-        WatcherTwo.pickedDecades = []
+        WatcherOne.pickedGenres.removeAll()
+        WatcherOne.pickedActors.removeAll()
+        WatcherOne.pickedDecades.removeAll()
+        WatcherTwo.pickedGenres.removeAll()
+        WatcherTwo.pickedActors.removeAll()
+        WatcherTwo.pickedDecades.removeAll()
         self.firstWatcherButton.setBackgroundImage(CompletedButton.notcompleted.image, for: .normal)
         self.secondWatcherButton.setBackgroundImage(CompletedButton.notcompleted.image, for: .normal)
         self.resultsButton.isEnabled = false

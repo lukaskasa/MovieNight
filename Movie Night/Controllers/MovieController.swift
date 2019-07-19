@@ -25,8 +25,9 @@ class MovieController: UIViewController {
     }
     
     func setupMovieData() {
+        moviePosterImage.image = movie?.posterImage
         movieTitleLabel.text = movie?.title
-        movieReleaseYearLabel.text = movie?.releaseDate
+        movieReleaseYearLabel.text = movie?.year
         movieDescriptionLabel.text = movie?.overview
     }
     

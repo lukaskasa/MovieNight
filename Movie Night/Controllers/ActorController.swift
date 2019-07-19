@@ -15,8 +15,8 @@ class ActorController: UITableViewController {
     @IBOutlet weak var stateBarButtonItem: UIBarButtonItem!
     
     // MARK: - Properties
-    let dataSource = ActorDatasource(data: Stub.actors)
-    let delegate = ActorDelegate(data: Stub.actors)
+    //var dataSource: ActorDatasource?
+    var delegate: ActorDelegate?
     
     var mainController: MainViewController?
     
@@ -24,13 +24,24 @@ class ActorController: UITableViewController {
     
     var firstWatcher: Bool = false
     
+    var actors: [Actor]? {
+        didSet {
+            dataSource.update(with: actors!)
+            delegate = ActorDelegate(data: actors!)
+            setupTableview()
+        }
+    }
+    
+    lazy var dataSource: ActorDatasource = {
+        return ActorDatasource(actors: [], tableView: self.tableView)
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Setup
         disableNavigation()
-        setupTableview()
         stateBarButtonItem.width = view.frame.size.width
     }
     
@@ -40,7 +51,7 @@ class ActorController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let decadeController = segue.destination as! DecadeController
         decadeController.pickedGenres = pickedGenres
-        decadeController.pickedActors = delegate.selectedActors
+        decadeController.pickedActors = delegate!.selectedActors
         decadeController.firstWatcher = firstWatcher
     }
     
@@ -52,8 +63,9 @@ class ActorController: UITableViewController {
     func setupTableview() {
         tableView.allowsMultipleSelection = true
         tableView.delegate = delegate
-        delegate.actorController = self
+        delegate!.actorController = self
         tableView.dataSource = dataSource
+        tableView.reloadData()
     }
     
     func enableNavigation() {

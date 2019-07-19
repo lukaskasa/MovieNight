@@ -7,12 +7,20 @@
 //
 
 import Foundation
+import UIKit
 
-class Actor: MovieData {
+struct Actors: Decodable {
+    let results: [Actor]
+}
+
+class Actor: MovieData, Decodable {
     
     let id: Int
     let profilePath: String
     let name: String
+    
+    var profileImage: UIImage?
+    var downloaded: ImageDownload.State? = .placeholder
     
     init(id: Int, profilePath: String, name: String) {
         self.id = id
@@ -20,4 +28,17 @@ class Actor: MovieData {
         self.name = name
     }
     
+    private enum CodingKeys: String, CodingKey {
+        case id
+        case profilePath
+        case name
+    }
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(Int.self, forKey: .id)
+        name = try container.decode(String.self, forKey: .name)
+        profilePath = try container.decode(String.self, forKey: .profilePath)
+    }
+
 }

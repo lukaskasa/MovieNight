@@ -34,7 +34,7 @@ class MovieMatcher {
         return commonActors
     }
     
-    static func getCommonDecades() -> [Decade] {
+    public func getCommonDecades() -> [Decade] {
         var commonDecades = [Decade]()
         
         for decade in WatcherOne.pickedDecades {
@@ -45,5 +45,39 @@ class MovieMatcher {
         
         return commonDecades
     }
+    
+    
+    func getStartDate() -> String {
+        var startDate = Decade.twentyTens.startDate
+        let commonDecades = self.getCommonDecades()
+        
+        for decade in commonDecades {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-DD"
+            let date = formatter.date(from: decade.startDate)!
+            if date < formatter.date(from: startDate)! {
+                startDate = decade.startDate
+            }
+        }
+        
+        return startDate
+    }
+    
+    func getEndDate() -> String {
+        var endDate = Decade.nineteenTwenties.endDate
+        let commonDecades = self.getCommonDecades()
+        
+        for decade in commonDecades {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-DD"
+            let date = formatter.date(from: decade.endDate)!
+            if date > formatter.date(from: endDate)! {
+                endDate = decade.endDate
+            }
+        }
+        
+        return endDate
+    }
+    
     
 }

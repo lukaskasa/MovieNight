@@ -7,17 +7,20 @@
 //
 
 import Foundation
+import UIKit
 
-class MoviewViewModel {
+struct MoviewViewModel {
     
     var title: String
     var description: String
     var year: String
+    var posterImage: UIImage
     
     init(movie: Movie) {
         self.title = movie.title
         self.description = movie.overview
-        self.year = movie.releaseDate
+        self.year = movie.year!
+        self.posterImage = movie.downloaded == .downloaded ? movie.posterImage! : UIImage(imageLiteralResourceName: "video-player")
     }
     
 }
