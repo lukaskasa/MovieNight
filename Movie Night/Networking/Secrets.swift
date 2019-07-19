@@ -10,6 +10,6 @@ import Foundation
 
 class Secrets {
     
-    static let apiKey = "c7dacd52bfb7d469ace372e13c4586c1"
+    static let apiKey = "YOUR API KEY GOES HERE!"
     
 }

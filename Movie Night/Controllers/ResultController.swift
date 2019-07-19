@@ -26,9 +26,6 @@ class ResultController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Setup
-        setupTableview()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -45,6 +42,7 @@ class ResultController: UITableViewController {
      */
     func setupTableview() {
         tableView.delegate = delegate
+        dataSource.resultController = self
         tableView.dataSource = dataSource
         tableView.reloadData()
     }

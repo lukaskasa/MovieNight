@@ -91,6 +91,8 @@ class MovieDBAPIClient: APIClient {
         // Endpoint
         let endpoint = MovieDB.discoverMovie(cast: cast, genres: genres, startDate: startDate, endDate: endDate)
         
+        print(endpoint.request)
+        
         performRequest(with: endpoint.request) { results, error in
             
             guard let results = results else {

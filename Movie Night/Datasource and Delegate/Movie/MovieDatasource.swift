@@ -13,6 +13,7 @@ class MovieDatasource: NSObject, UITableViewDataSource {
     private var movies: [Movie]
     let tableView: UITableView
     let pendingOperations = PendingOperations()
+    var resultController: ResultController?
     
     init(movies: [Movie], tableView: UITableView) {
         self.movies = movies
@@ -26,7 +27,16 @@ class MovieDatasource: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movies.count
+        if movies.count == 0 {
+            let noMatchesLabel = UILabel(frame: CGRect(x: 0, y: 0, width: resultController!.view.bounds.size.width, height: resultController!.view.bounds.size.height))
+            noMatchesLabel.text = "No matches for you today 😴"
+            noMatchesLabel.textAlignment = NSTextAlignment.center
+            self.tableView.backgroundView = noMatchesLabel
+            self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+            return 0
+        } else {
+            return movies.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

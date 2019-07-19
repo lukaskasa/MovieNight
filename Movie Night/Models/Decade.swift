@@ -10,16 +10,16 @@ import Foundation
 
 enum Decade: String, CaseIterable, MovieData {
 
-    case nineteenTwenties = "1920s"
-    case nineteenThirties = "1930s"
-    case nineteenForties = "1940s"
-    case nineteenFifties = "1950s"
-    case nineteenSixties = "1960s"
-    case nineteenSeventies = "1970s"
-    case nineteenEighties = "1980s"
-    case nineteenNineties = "1990s"
-    case twoThousands = "2000s"
     case twentyTens = "2010s"
+    case twoThousands = "2000s"
+    case nineteenNineties = "1990s"
+    case nineteenEighties = "1980s"
+    case nineteenSeventies = "1970s"
+    case nineteenSixties = "1960s"
+    case nineteenFifties = "1950s"
+    case nineteenForties = "1940s"
+    case nineteenThirties = "1930s"
+    case nineteenTwenties = "1920s"
     
     var name: String {
         switch self {

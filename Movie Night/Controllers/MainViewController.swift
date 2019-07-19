@@ -37,15 +37,6 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        print("First Watcher:")
-        dump(WatcherOne.pickedGenres)
-        dump(WatcherOne.pickedActors)
-        dump(WatcherOne.pickedDecades)
-        print("Second Watcher:")
-        dump(WatcherTwo.pickedGenres)
-        dump(WatcherTwo.pickedActors)
-        dump(WatcherTwo.pickedDecades)
         // Set up
         genreController?.mainController = self
         // UI Set up
@@ -89,6 +80,11 @@ class MainViewController: UIViewController {
             client.getMovies(genres: genres, cast: cast, startDate: startDate, endDate: endDate) { movies, error in
                 
                 if let movies = movies {
+                    
+                    if movies.results.count == 0 {
+                        
+                    }
+                    
                     resultsController.movies = movies.results
                 }
                 
