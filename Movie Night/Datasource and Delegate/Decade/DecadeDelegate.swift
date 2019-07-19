@@ -13,7 +13,7 @@ class DecadeDelegate: NSObject, UITableViewDelegate {
     // MARK: - Properties
     
     private let cellHeight: CGFloat = 60.0
-    private let amountOfDecadesToBeSelected: Int = 5
+    private let amountOfDecadesToBeSelected: Int = 3
     var decadeController: DecadeController?
     var decades = [DecadeViewModel]()
     
@@ -32,6 +32,7 @@ class DecadeDelegate: NSObject, UITableViewDelegate {
     }
     
     // MARK: - Delegate Methods
+    /// Apple Documentation https://developer.apple.com/documentation/uikit/uitableviewdelegate
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return self.cellHeight

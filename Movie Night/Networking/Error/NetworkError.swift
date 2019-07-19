@@ -9,5 +9,5 @@
 import Foundation
 
 enum NetworkError: Error {
-    case failure
+    case noConnection
 }

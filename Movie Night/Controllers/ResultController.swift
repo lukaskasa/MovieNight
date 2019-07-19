@@ -10,8 +10,8 @@ import UIKit
 
 class ResultController: UITableViewController {
     
+    // MARK: - Properties
     var delegate: MovieDelegate?
-    
     var movies: [Movie]? {
         didSet {
             delegate = MovieDelegate(data: movies!)
@@ -37,9 +37,6 @@ class ResultController: UITableViewController {
     
     // MARK: - Helper Methods
     
-    /**
-     
-     */
     func setupTableview() {
         tableView.delegate = delegate
         dataSource.resultController = self

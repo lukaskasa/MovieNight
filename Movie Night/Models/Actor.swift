@@ -13,24 +13,24 @@ struct Actors: Decodable {
     let results: [Actor]
 }
 
-class Actor: MovieData, Decodable {
+class Actor: Imageable, Decodable {
     
     let id: Int
-    let profilePath: String
+    let imagePath: String
     let name: String
     
-    var profileImage: UIImage?
-    var downloaded: ImageDownload.State? = .placeholder
+    var image: UIImage?
+    var downloaded: ImageDownload.State = .placeholder
     
-    init(id: Int, profilePath: String, name: String) {
+    init(id: Int, imagePath: String, name: String) {
         self.id = id
-        self.profilePath = profilePath
+        self.imagePath = imagePath
         self.name = name
     }
     
     private enum CodingKeys: String, CodingKey {
         case id
-        case profilePath
+        case imagePath = "profile_path"
         case name
     }
     
@@ -38,7 +38,7 @@ class Actor: MovieData, Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(Int.self, forKey: .id)
         name = try container.decode(String.self, forKey: .name)
-        profilePath = try container.decode(String.self, forKey: .profilePath)
+        imagePath = try container.decode(String.self, forKey: .imagePath)
     }
 
 }

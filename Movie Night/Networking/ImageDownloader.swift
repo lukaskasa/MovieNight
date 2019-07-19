@@ -1,20 +1,22 @@
 //
-//  PosterImageDownloader.swift
+//  ImageDownloader.swift
 //  Movie Night
 //
-//  Created by Lukas Kasakaitis on 19.07.19.
+//  Created by Lukas Kasakaitis on 18.07.19.
 //  Copyright © 2019 Lukas Kasakaitis. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class PosterImageDownloader: Operation {
+class ImageDownloader: Operation {
     
-    var movie: Movie
+    var entity: Imageable
+    var quality: Int
     
-    init(movie: Movie) {
-        self.movie = movie
+    init(entity: Imageable, quality: Int) {
+        self.entity = entity
+        self.quality = quality
         super.init()
     }
     
@@ -28,7 +30,7 @@ class PosterImageDownloader: Operation {
             return
         }
         
-        guard let url = URL(string: "/t/p/w300\(movie.posterPath)", relativeTo: ImageDownload.baseURL!) else {
+        guard let url = URL(string: "/t/p/w\(quality)\(entity.imagePath)", relativeTo: ImageDownload.baseURL!) else {
             return
         }
         
@@ -40,16 +42,16 @@ class PosterImageDownloader: Operation {
             }
             
             if imageData.count > 0 {
-                movie.posterImage = UIImage(data: imageData)
-                movie.downloaded = .downloaded
+                entity.image = UIImage(data: imageData)
+                entity.downloaded = .downloaded
             } else {
-                movie.downloaded = .failed
+                entity.downloaded = .failed
             }
             
         } catch let error {
             print(error.localizedDescription)
         }
-        
+
     }
     
 }

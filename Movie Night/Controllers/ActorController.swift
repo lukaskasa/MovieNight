@@ -15,13 +15,9 @@ class ActorController: UITableViewController {
     @IBOutlet weak var stateBarButtonItem: UIBarButtonItem!
     
     // MARK: - Properties
-    //var dataSource: ActorDatasource?
     var delegate: ActorDelegate?
-    
     var mainController: MainViewController?
-    
     var pickedGenres = [MovieGenre]()
-    
     var firstWatcher: Bool = false
     
     var actors: [Actor]? {
@@ -39,7 +35,6 @@ class ActorController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Setup
         disableNavigation()
         stateBarButtonItem.width = view.frame.size.width
@@ -56,10 +51,7 @@ class ActorController: UITableViewController {
     }
     
     // MARK: - Helper Methods
-    
-    /**
-     
-     */
+
     func setupTableview() {
         tableView.allowsMultipleSelection = true
         tableView.delegate = delegate

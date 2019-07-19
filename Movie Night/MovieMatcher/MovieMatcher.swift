@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Class to get common genres, actors and time periods
 class MovieMatcher {
     
     static func getCommonGenres() -> [MovieGenre] {

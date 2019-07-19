@@ -13,36 +13,36 @@ struct Movies: Decodable {
     let results: [Movie]
 }
 
-class Movie: Decodable {
+class Movie: Imageable, Decodable {
     
     let title: String
-    let posterPath: String
+    let imagePath: String
     let overview: String
     var releaseDate: String
 
     var year: String?
-    var posterImage: UIImage?
-    var downloaded: ImageDownload.State? = .placeholder
+    var image: UIImage?
+    var downloaded: ImageDownload.State = .placeholder
     
     
-    init(title: String, posterPath: String, overview: String, releaseDate: String) {
+    init(title: String, imagePath: String, overview: String, releaseDate: String) {
         self.title = title
-        self.posterPath = posterPath
+        self.imagePath = imagePath
         self.overview = overview
         self.releaseDate = releaseDate
     }
     
     private enum CodingKeys: String, CodingKey {
         case title
-        case posterPath
+        case imagePath = "poster_path"
         case overview
-        case releaseDate
+        case releaseDate = "release_date"
     }
     
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         title = try container.decode(String.self, forKey: .title)
-        posterPath = try container.decode(String.self, forKey: .posterPath)
+        imagePath = try container.decode(String.self, forKey: .imagePath)
         overview = try container.decode(String.self, forKey: .overview)
         releaseDate = try container.decode(String.self, forKey: .releaseDate)
         year = self.getYear(from: releaseDate)

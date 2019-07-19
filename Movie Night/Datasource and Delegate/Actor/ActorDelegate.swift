@@ -19,7 +19,7 @@ class ActorDelegate: NSObject, UITableViewDelegate {
     
     var selectedActors: [Actor] {
         let selected = actors.filter { $0.isSelected == true }
-        return selected.map { return Actor(id: $0.id, profilePath: $0.profilePath, name: $0.name) }
+        return selected.map { return Actor(id: $0.id, imagePath: $0.profilePath, name: $0.name) }
     }
     
     init(data: [Actor]) {
@@ -27,6 +27,7 @@ class ActorDelegate: NSObject, UITableViewDelegate {
     }
     
     // MARK: - Delegate Methods
+    /// Apple Documentation https://developer.apple.com/documentation/uikit/uitableviewdelegate
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return self.cellHeight

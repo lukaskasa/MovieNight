@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+/// API Error enum representation
 enum APIError: Error {
     
     case requestFailed

@@ -37,9 +37,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Set up
-        genreController?.mainController = self
-        // UI Set up
+        // Setup
         setupNavigation()
         setButtonState()
     }
@@ -80,11 +78,6 @@ class MainViewController: UIViewController {
             client.getMovies(genres: genres, cast: cast, startDate: startDate, endDate: endDate) { movies, error in
                 
                 if let movies = movies {
-                    
-                    if movies.results.count == 0 {
-                        
-                    }
-                    
                     resultsController.movies = movies.results
                 }
                 
@@ -117,6 +110,7 @@ class MainViewController: UIViewController {
     // MARK: - Helper Methods
     
     func setupNavigation() {
+        genreController?.mainController = self
         self.navigationController?.setToolbarHidden(true, animated: false)
         self.navigationItem.setHidesBackButton(true, animated:true)
     }

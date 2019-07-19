@@ -20,7 +20,7 @@ struct MoviewViewModel {
         self.title = movie.title
         self.description = movie.overview
         self.year = movie.year!
-        self.posterImage = movie.downloaded == .downloaded ? movie.posterImage! : UIImage(imageLiteralResourceName: "video-player")
+        self.posterImage = movie.downloaded == .downloaded ? movie.image! : UIImage(imageLiteralResourceName: "video-player")
     }
     
 }

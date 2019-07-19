@@ -19,8 +19,8 @@ struct ActorViewModel {
     
     init(actor: Actor) {
         self.id = actor.id
-        self.profilePath = actor.profilePath
-        self.profileImage = actor.downloaded == .downloaded ? actor.profileImage! : UIImage(imageLiteralResourceName: "boy")
+        self.profilePath = actor.imagePath
+        self.profileImage = actor.downloaded == .downloaded ? actor.image! : UIImage(imageLiteralResourceName: "boy")
         self.name = actor.name
     }
 }

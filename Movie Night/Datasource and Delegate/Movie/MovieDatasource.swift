@@ -21,6 +21,7 @@ class MovieDatasource: NSObject, UITableViewDataSource {
     }
     
     // MARK: - Datasource methods
+    /// Apple Documentation: https://developer.apple.com/documentation/uikit/uitableviewdatasource
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -66,7 +67,7 @@ class MovieDatasource: NSObject, UITableViewDataSource {
             return
         }
         
-        let downloader = PosterImageDownloader(movie: movie)
+        let downloader = ImageDownloader(entity: movie, quality: 300)
         
         downloader.completionBlock = {
             

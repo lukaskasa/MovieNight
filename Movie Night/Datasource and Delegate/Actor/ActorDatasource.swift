@@ -21,6 +21,7 @@ class ActorDatasource: NSObject, UITableViewDataSource {
     }
     
     // MARK: - Datasource Methods
+    /// Apple Documentation: https://developer.apple.com/documentation/uikit/uitableviewdatasource
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -57,7 +58,7 @@ class ActorDatasource: NSObject, UITableViewDataSource {
             return
         }
         
-        let downloader = ProfileImageDownloader(actor: actor)
+        let downloader = ImageDownloader(entity: actor, quality: 200)
         
         downloader.completionBlock = {
             

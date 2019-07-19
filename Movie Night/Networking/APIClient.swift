@@ -10,12 +10,23 @@ import Foundation
 
 protocol APIClient {
     var session: URLSession { get }
+    var jsonDecoder: JSONDecoder { get }
 }
 
+/// Default APIClient protocol implementation
 extension APIClient {
-    
+    /// Typealias for the completionHandler
     typealias DataTaskCompletionHandler = (Data?, APIError?) -> Void
     
+    /**
+     Data task
+     
+     - Parameters:
+        - request: The request passed in
+        - completion: Completion Handler to be executed after the task is completed.
+     
+     - Returns: A session task to retrieve data
+     */
     func dataTask(with request: URLRequest, completionHandler completion: @escaping DataTaskCompletionHandler) -> URLSessionDataTask {
         
         let task = session.dataTask(with: request) { data, response, error in

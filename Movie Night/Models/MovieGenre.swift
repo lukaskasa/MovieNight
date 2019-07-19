@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MovieGenre: MovieData, Decodable {
+class MovieGenre: Decodable {
     
     let id: Int
     let name: String

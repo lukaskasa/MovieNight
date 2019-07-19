@@ -19,13 +19,12 @@ class MovieController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Setup
         setupMovieData()
     }
     
     func setupMovieData() {
-        moviePosterImage.image = movie?.posterImage
+        moviePosterImage.image = movie?.image
         movieTitleLabel.text = movie?.title
         movieReleaseYearLabel.text = movie?.year
         movieDescriptionLabel.text = movie?.overview

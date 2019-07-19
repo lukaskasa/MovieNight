@@ -25,7 +25,8 @@ class GenreDelegate: NSObject, UITableViewDelegate {
         genres = allGenres.map{GenreViewModel(genre: $0)}
     }
 
-    // MARK: - Tableview Delegate Methods
+    // MARK: - Delegate Methods
+    /// Apple Documentation https://developer.apple.com/documentation/uikit/uitableviewdelegate
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return self.cellHeight

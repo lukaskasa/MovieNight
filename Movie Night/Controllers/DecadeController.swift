@@ -10,20 +10,20 @@ import UIKit
 
 class DecadeController: UITableViewController {
     
+    // MARK: - Outlets
     @IBOutlet weak var finishBarButton: UIBarButtonItem!
     @IBOutlet weak var stateBarButtonItem: UIBarButtonItem!
     
+    
+    // MARK - Properties
     let delegate = DecadeDelegate(data: Decade.allCases)
     let dataSource = DecadeDatasource(data: Decade.allCases)
-    
     var pickedGenres = [MovieGenre]()
     var pickedActors = [Actor]()
-    
     var firstWatcher: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Setup
         disableNavigation()
         setupTableview()
@@ -31,8 +31,6 @@ class DecadeController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //let mainController = segue.destination as! MainViewController
-        
         if firstWatcher {
             WatcherOne.pickedGenres = pickedGenres
             WatcherOne.pickedActors = pickedActors
@@ -42,15 +40,11 @@ class DecadeController: UITableViewController {
             WatcherTwo.pickedActors = pickedActors
             WatcherTwo.pickedDecades = delegate.selectedDecades
         }
-
     }
     
     
     // MARK: - Helper Methods
-    
-    /**
-     
-     */
+
     func setupTableview() {
         tableView.allowsMultipleSelection = true
         tableView.delegate = delegate

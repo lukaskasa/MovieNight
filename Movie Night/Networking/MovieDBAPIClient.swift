@@ -8,23 +8,22 @@
 
 import Foundation
 
+/// Implements the APIClient protocol
 class MovieDBAPIClient: APIClient {
     
-    var session: URLSession
-    
+    /// Properties
     let jsonDecoder = JSONDecoder()
+    var session: URLSession
     
     init(configuration: URLSessionConfiguration) {
         self.session = URLSession(configuration: configuration)
-        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
     }
     
     convenience init() {
         self.init(configuration: .default)
-        jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
     }
     
-    // Typealiases
+    /// Typealiases
     
     typealias GenresCompletionHandler = ([String: [MovieGenre]]?, APIError?) -> Void
     typealias ActorsCompletionHandler = (Actors?, APIError?) -> Void
@@ -49,9 +48,7 @@ class MovieDBAPIClient: APIClient {
                 completion(genres, nil)
                 
             } catch {
-                
                 completion(nil, .jsonParsingFailure)
-                
             }
             
         }
@@ -75,11 +72,8 @@ class MovieDBAPIClient: APIClient {
                 let actors = try self.jsonDecoder.decode(Actors.self, from: results)
                 completion(actors, nil)
                 
-            } catch let error {
-                
-                print(error.localizedDescription)
+            } catch {
                 completion(nil, .jsonParsingFailure)
-                
             }
             
         }
@@ -91,8 +85,6 @@ class MovieDBAPIClient: APIClient {
         // Endpoint
         let endpoint = MovieDB.discoverMovie(cast: cast, genres: genres, startDate: startDate, endDate: endDate)
         
-        print(endpoint.request)
-        
         performRequest(with: endpoint.request) { results, error in
             
             guard let results = results else {
@@ -100,17 +92,13 @@ class MovieDBAPIClient: APIClient {
                 return
             }
             
-            
             do {
                 
                 let movies = try self.jsonDecoder.decode(Movies.self, from: results)
                 completion(movies, nil)
                 
-            } catch let error {
-                
-                print(error.localizedDescription)
+            } catch {
                 completion(nil, .jsonParsingFailure)
-                
             }
             
         }
@@ -130,7 +118,6 @@ class MovieDBAPIClient: APIClient {
                 
                 completion(data, nil)
             }
-            
         }
         
         task.resume()

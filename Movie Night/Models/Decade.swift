@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Decade: String, CaseIterable, MovieData {
+enum Decade: String, CaseIterable {
 
     case twentyTens = "2010s"
     case twoThousands = "2000s"

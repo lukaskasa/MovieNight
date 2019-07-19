@@ -11,7 +11,6 @@ import UIKit
 class MovieDelegate: NSObject, UITableViewDelegate {
     
     // MARK: - Properties
-    
     private let cellHeight: CGFloat = 80.0
     private var data: [Movie]
     
@@ -22,17 +21,14 @@ class MovieDelegate: NSObject, UITableViewDelegate {
     }
     
     // MARK: - Delegate Methods
+    /// Apple Documentation: https://developer.apple.com/documentation/uikit/uitableviewdelegate
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return self.cellHeight
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //let indexPath = tableView.indexPathForSelectedRow!
-        //let selectedCell = tableView.cellForRow(at: indexPath)
-        
         movieController?.movie = data[indexPath.row]
-        //navigationController?.pushViewController(movieController, animated: true)
     }
     
 }
