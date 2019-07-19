@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		801E3EC622E2144200F6780E /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801E3EC522E2144200F6780E /* Secrets.swift */; };
 		8096CC0222E0B5A5009B325D /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8096CC0122E0B5A5009B325D /* ImageDownloader.swift */; };
 		8096CC0422E0BA36009B325D /* PendingOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8096CC0322E0BA36009B325D /* PendingOperations.swift */; };
 		8096CC0922E0BBF3009B325D /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8096CC0822E0BBF3009B325D /* NetworkError.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		801E3EC522E2144200F6780E /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		8096CC0122E0B5A5009B325D /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		8096CC0322E0BA36009B325D /* PendingOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingOperations.swift; sourceTree = "<group>"; };
 		8096CC0822E0BBF3009B325D /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 		80EB9A3B22DF190900F53D05 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				801E3EC522E2144200F6780E /* Secrets.swift */,
 				80EB9A3F22DF6A1900F53D05 /* Endpoint.swift */,
 				80EB9A3C22DF192A00F53D05 /* APIClient.swift */,
 				80EB9A4822DF7CCD00F53D05 /* MovieDBAPIClient.swift */,
@@ -368,6 +371,7 @@
 				80BF3FB622D85BDE006492E5 /* Actor.swift in Sources */,
 				80BF3FBF22DA4DE6006492E5 /* Movie.swift in Sources */,
 				80EB9A4022DF6A1900F53D05 /* Endpoint.swift in Sources */,
+				801E3EC622E2144200F6780E /* Secrets.swift in Sources */,
 				80BF3FB822D85EB1006492E5 /* Decade.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
