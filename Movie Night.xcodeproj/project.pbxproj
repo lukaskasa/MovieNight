@@ -46,7 +46,6 @@
 		80EB9A3A22DEFC7400F53D05 /* MovieDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB9A3922DEFC7400F53D05 /* MovieDatasource.swift */; };
 		80EB9A3D22DF192A00F53D05 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB9A3C22DF192A00F53D05 /* APIClient.swift */; };
 		80EB9A4022DF6A1900F53D05 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB9A3F22DF6A1900F53D05 /* Endpoint.swift */; };
-		80EB9A4222DF6D5900F53D05 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB9A4122DF6D5900F53D05 /* Secrets.swift */; };
 		80EB9A4422DF760900F53D05 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB9A4322DF760900F53D05 /* APIError.swift */; };
 		80EB9A4922DF7CCD00F53D05 /* MovieDBAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EB9A4822DF7CCD00F53D05 /* MovieDBAPIClient.swift */; };
 /* End PBXBuildFile section */
@@ -93,7 +92,6 @@
 		80EB9A3922DEFC7400F53D05 /* MovieDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDatasource.swift; sourceTree = "<group>"; };
 		80EB9A3C22DF192A00F53D05 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		80EB9A3F22DF6A1900F53D05 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
-		80EB9A4122DF6D5900F53D05 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		80EB9A4322DF760900F53D05 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		80EB9A4822DF7CCD00F53D05 /* MovieDBAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDBAPIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -242,7 +240,6 @@
 		80EB9A3B22DF190900F53D05 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				80EB9A4122DF6D5900F53D05 /* Secrets.swift */,
 				80EB9A3F22DF6A1900F53D05 /* Endpoint.swift */,
 				80EB9A3C22DF192A00F53D05 /* APIClient.swift */,
 				80EB9A4822DF7CCD00F53D05 /* MovieDBAPIClient.swift */,
@@ -339,7 +336,6 @@
 				80BF3FD222DC6D78006492E5 /* GenreViewModel.swift in Sources */,
 				80EB9A2B22DDC19700F53D05 /* DecadeDatasource.swift in Sources */,
 				80BF3FC722DB1FE4006492E5 /* GenreDatasource.swift in Sources */,
-				80EB9A4222DF6D5900F53D05 /* Secrets.swift in Sources */,
 				80BF3FBD22D9D549006492E5 /* GenreController.swift in Sources */,
 				80EB9A2222DDADD700F53D05 /* DecadeController.swift in Sources */,
 				8096CC0922E0BBF3009B325D /* NetworkError.swift in Sources */,
