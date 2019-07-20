@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+/// WatcherOne and WatcherTwo singletons used to store selections
 protocol Watcher {
     static var pickedGenres: [MovieGenre] { get set }
     static var pickedActors: [Actor] { get set }

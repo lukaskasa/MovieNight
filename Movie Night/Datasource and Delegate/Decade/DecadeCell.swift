@@ -11,12 +11,10 @@ import UIKit
 class DecadeCell: UITableViewCell {
     
     // MARK: - Outlets
-    
     @IBOutlet weak var checkMark: UIImageView!
     @IBOutlet weak var decadeLabel: UILabel!
     
     // MARK: - Properties
-    
     static let reuseIdentifier = "DecadeCell"
     
 

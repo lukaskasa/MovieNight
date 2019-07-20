@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+/// Used to regulate the queue and tasks to be executed
 class PendingOperations {
     var downloadsInProgress = [IndexPath: Operation]()
     let downloadQueue = OperationQueue()

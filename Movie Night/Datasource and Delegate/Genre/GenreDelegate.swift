@@ -11,6 +11,7 @@ import UIKit
 
 class GenreDelegate: NSObject, UITableViewDelegate {
     
+    /// Properties
     private let cellHeight: CGFloat = 60.0
     private let amountOfGenresToBeSelected: Int = 5
     var genreController: GenreController?
@@ -44,6 +45,9 @@ class GenreDelegate: NSObject, UITableViewDelegate {
     
     // MARK: - Helper Methods
     
+    /**
+     Toggle the status of selections and enable/disable next button 
+     */
     func toggleNavigation() {
         if selectedGenres.count == amountOfGenresToBeSelected {
             self.genreController?.enableNavigation()

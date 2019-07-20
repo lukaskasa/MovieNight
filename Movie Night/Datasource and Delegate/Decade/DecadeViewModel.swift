@@ -9,10 +9,11 @@
 import Foundation
 
 class DecadeViewModel {
-    
+    /// Properties
     var name: String
     var isSelected: Bool = false
     
+    /// Initializer
     init(decade: Decade) {
         self.name = decade.name
     }

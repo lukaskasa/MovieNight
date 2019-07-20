@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+/// Protocol used for objects to provided image properties used to download images and display these on the UI
 protocol Imageable {
     var imagePath: String { get }
     var image: UIImage? { get set }

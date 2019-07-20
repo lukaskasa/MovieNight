@@ -13,6 +13,7 @@ struct Movies: Decodable {
     let results: [Movie]
 }
 
+/// Movie
 class Movie: Imageable, Decodable {
     
     let title: String
@@ -23,7 +24,6 @@ class Movie: Imageable, Decodable {
     var year: String?
     var image: UIImage?
     var downloaded: ImageDownload.State = .placeholder
-    
     
     init(title: String, imagePath: String, overview: String, releaseDate: String) {
         self.title = title
@@ -51,7 +51,6 @@ class Movie: Imageable, Decodable {
 }
 
 // MARK: - Helper Methods
-
 extension Movie {
     
     private func getYear(from date: String) -> String {

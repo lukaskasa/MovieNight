@@ -10,11 +10,13 @@ import UIKit
 
 class MovieDatasource: NSObject, UITableViewDataSource {
     
+    /// Properties
     private var movies: [Movie]
     let tableView: UITableView
     let pendingOperations = PendingOperations()
     var resultController: ResultController?
     
+    /// Initializer
     init(movies: [Movie], tableView: UITableView) {
         self.movies = movies
         self.tableView = tableView

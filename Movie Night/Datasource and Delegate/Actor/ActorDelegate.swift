@@ -45,6 +45,9 @@ class ActorDelegate: NSObject, UITableViewDelegate {
     
     // MARK: - Helper Methods
     
+    /**
+     Toggle the status of selections and enable/disable next button
+     */
     func toggleNavigation() {
         if selectedActors.count == amountOfActorsToBeSelected {
             self.actorController?.enableNavigation()

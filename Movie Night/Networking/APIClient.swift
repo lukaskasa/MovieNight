@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+/// APIClient Protocol
 protocol APIClient {
     var session: URLSession { get }
     var jsonDecoder: JSONDecoder { get }
@@ -25,7 +25,7 @@ extension APIClient {
         - request: The request passed in
         - completion: Completion Handler to be executed after the task is completed.
      
-     - Returns: A session task to retrieve data
+     - Returns: A session task to retrieve data using the given request
      */
     func dataTask(with request: URLRequest, completionHandler completion: @escaping DataTaskCompletionHandler) -> URLSessionDataTask {
         

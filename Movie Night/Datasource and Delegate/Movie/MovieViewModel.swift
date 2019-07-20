@@ -11,11 +11,13 @@ import UIKit
 
 struct MoviewViewModel {
     
+    /// Properties
     var title: String
     var description: String
     var year: String
     var posterImage: UIImage
     
+    /// Initializer
     init(movie: Movie) {
         self.title = movie.title
         self.description = movie.overview

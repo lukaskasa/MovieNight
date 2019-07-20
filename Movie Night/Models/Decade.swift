@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+/// Decade used to get only movies from the given time period
 enum Decade: String, CaseIterable {
 
     case twentyTens = "2010s"

@@ -8,28 +8,49 @@
 
 import Foundation
 
-/// Implements the APIClient protocol
+/// API Client for the Movie DB which Implements the APIClient protocol
+/// https://developers.themoviedb.org/3
 class MovieDBAPIClient: APIClient {
     
     /// Properties
     let jsonDecoder = JSONDecoder()
     var session: URLSession
     
+    /**
+     Initializes a client object with the given URL Session Configuration
+     
+     - Parameters:
+        - configuration: Session configuration
+     
+     - Returns: A client used perform API requests
+     */
     init(configuration: URLSessionConfiguration) {
         self.session = URLSession(configuration: configuration)
     }
     
+    /**
+     Initializes a client object with the .default configuration
+     
+     - Returns: A client used perform API requests
+     */
     convenience init() {
         self.init(configuration: .default)
     }
     
-    /// Typealiases
-    
+    /// Typealiases for completion handlers
     typealias GenresCompletionHandler = ([String: [MovieGenre]]?, APIError?) -> Void
     typealias ActorsCompletionHandler = (Actors?, APIError?) -> Void
     typealias MovieCompletionHandler = (Movies?, APIError?) -> Void
     
-    
+    /**
+     Gets and parses all genres from the genres endpoint
+     - Docs: https://developers.themoviedb.org/3/genres/get-movie-list
+     
+     - Parameters:
+        - completion: Completion Handler once the request is completed. (Successfully or not)
+     
+     - Returns: Void
+     */
     func getGenres(completionHandler completion: @escaping GenresCompletionHandler) {
         
         /// Endpoint
@@ -55,6 +76,15 @@ class MovieDBAPIClient: APIClient {
         
     }
     
+    /**
+     Gets the most popular people (actors) and parses from the get popular people endpoint
+     - Docs: https://developers.themoviedb.org/3/people/get-popular-people
+     
+     - Parameters:
+     - completion: Completion Handler once the request is completed. (Successfully or not)
+     
+     - Returns: Void
+     */
     func getActors(completionHandler completion: @escaping ActorsCompletionHandler) {
         
         /// Endpoint
@@ -80,6 +110,19 @@ class MovieDBAPIClient: APIClient {
         
     }
     
+    /**
+     Gets and parses movies from the discover enpoint with the provided parameter
+     - Docs: https://developers.themoviedb.org/3/discover/movie-discover
+     
+     - Parameters:
+        - genres: Genres array of ids e.g. 110|999|991...
+        - cast: Actors array of ids e.g. 111|222|333...
+        - startDate: Earliest date for a movie released e.g. 2010-07-01
+        - endDate: Most recent date for a movie released e.g. 2019-07-01
+        - completion: Completion Handler once the request is completed. (Successfully or not)
+     
+     - Returns: Void
+     */
     func getMovies(genres: String, cast: String, startDate: String, endDate: String,  completionHandler completion: @escaping MovieCompletionHandler) {
         
         // Endpoint
@@ -105,7 +148,15 @@ class MovieDBAPIClient: APIClient {
         
     }
     
-    
+    /**
+     Performs the data request for the given request
+     
+     - Parameters:
+         - request: Request used for the task to be performed with
+         - completion: Completion Handler once the request is completed. (Successfully or not)
+     
+     - Returns: Void
+     */
     private func performRequest(with request: URLRequest, completion: @escaping (Data?, APIError?) -> Void) {
         
         let task = dataTask(with: request) { data, error in

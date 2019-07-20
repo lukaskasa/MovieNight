@@ -7,7 +7,7 @@
 //
 
 import Foundation
-/// API Error enum representation
+/// API Error enum representation for the different error cases
 enum APIError: Error {
     
     case requestFailed

@@ -25,18 +25,14 @@ enum Checkmark {
 class GenreCell: UITableViewCell {
     
     // MARK: - Outlets
-    
     @IBOutlet weak var checkMark: UIImageView!
     @IBOutlet weak var genreLabel: UILabel!
     
     // MARK: - Properties
-
     static let reuseIdentifier = "GenreCell"
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        //selectionStyle = .none
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

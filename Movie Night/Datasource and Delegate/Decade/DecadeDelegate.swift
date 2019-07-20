@@ -50,6 +50,9 @@ class DecadeDelegate: NSObject, UITableViewDelegate {
     
     // MARK: - Helper Methods
     
+    /**
+     Toggle the status of selections and enable/disable next button
+     */
     func toggleNavigation() {
         if selectedDecades.count == amountOfDecadesToBeSelected {
             self.decadeController?.enableNavigation()
