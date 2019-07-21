@@ -53,22 +53,25 @@ class MainViewController: UIViewController {
         
         if segue.identifier == "selectForFirstWatcher" || segue.identifier == "selectForSecondWatcher" {
             let genreController = segue.destination as! GenreController
+            
             client.getGenres { genres, error in
                 
-                if let genres = genres {
-                    genreController.genres = genres["genres"]
+                DispatchQueue.main.async {
+                    if let genres = genres {
+                        genreController.genres = genres["genres"]
+                    }
+                    
+                    if error != nil {
+                        genreController.error = true
+                    }
+                    
+                    switch segue.identifier {
+                    case "selectForFirstWatcher": genreController.firstWatcher = true
+                    case "selectForSecondWatcher": genreController.firstWatcher = false
+                    default: return
+                    }
                 }
-                
-                if error != nil {
-                    genreController.error = true
-                }
-                
-                switch segue.identifier {
-                case "selectForFirstWatcher": genreController.firstWatcher = true
-                case "selectForSecondWatcher": genreController.firstWatcher = false
-                default: return
-                }
-                
+                    
             }
         } else if segue.identifier == "showResults" {
             let resultsController = segue.destination as! ResultController
@@ -79,14 +82,16 @@ class MainViewController: UIViewController {
             
             client.getMovies(genres: genres, cast: cast, startDate: startDate, endDate: endDate) { movies, error in
                 
-                if let movies = movies {
-                    resultsController.movies = movies.results
+                DispatchQueue.main.async {
+                    if let movies = movies {
+                        resultsController.movies = movies.results
+                    }
+                    
+                    if error != nil {
+                        self.showAlertWith(title: "Error", message: error!.localizedDescription)
+                    }
                 }
-                
-                if error != nil {
-                    self.showAlertWith(title: "Error", message: error!.localizedDescription)
-                }
-                
+
             }
         }
 

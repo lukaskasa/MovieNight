@@ -55,15 +55,15 @@ class GenreController: UITableViewController {
         let actorController = segue.destination as! ActorController
         
         client.getActors { actors, error in
-            
-            if let actors = actors {
-                actorController.actors = actors.results
+            DispatchQueue.main.async {
+                if let actors = actors {
+                    actorController.actors = actors.results
+                }
+                
+                if error != nil {
+                    print(error!.localizedDescription)
+                }
             }
-            
-            if error != nil {
-                print(error!.localizedDescription)
-            }
-            
         }
         
         actorController.pickedGenres = delegate!.selectedGenres

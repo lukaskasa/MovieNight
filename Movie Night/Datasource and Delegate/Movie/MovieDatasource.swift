@@ -25,10 +25,6 @@ class MovieDatasource: NSObject, UITableViewDataSource {
     // MARK: - Datasource methods
     /// Apple Documentation: https://developer.apple.com/documentation/uikit/uitableviewdatasource
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if movies.count == 0 {
             let noMatchesLabel = UILabel(frame: CGRect(x: 0, y: 0, width: resultController!.view.bounds.size.width, height: resultController!.view.bounds.size.height))

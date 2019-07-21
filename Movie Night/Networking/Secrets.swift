@@ -10,7 +10,7 @@ import Foundation
 /// Object to hold application secrets
 struct Secrets {
     
-    static let apiKey = "ENTER YOUR API KEY HERE!"
+    static let apiKey = "c7dacd52bfb7d469ace372e13c4586c1"
     /// Get yours at https://www.themoviedb.org/documentation/api
     
 }

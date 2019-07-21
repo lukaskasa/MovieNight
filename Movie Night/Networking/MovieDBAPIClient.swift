@@ -161,14 +161,13 @@ class MovieDBAPIClient: APIClient {
         
         let task = dataTask(with: request) { data, error in
             
-            DispatchQueue.main.async {
-                guard let data = data else {
-                    completion(nil, error)
-                    return
-                }
-                
-                completion(data, nil)
+            guard let data = data else {
+                completion(nil, error)
+                return
             }
+            
+            completion(data, nil)
+
         }
         
         task.resume()
