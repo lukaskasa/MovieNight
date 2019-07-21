@@ -47,6 +47,8 @@ class MainViewController: UIViewController {
         setupNavigation()
     }
     
+    // MARK: - Navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "selectForFirstWatcher" || segue.identifier == "selectForSecondWatcher" {
@@ -58,7 +60,7 @@ class MainViewController: UIViewController {
                 }
                 
                 if error != nil {
-                    print(error!.localizedDescription)
+                    genreController.error = true
                 }
                 
                 switch segue.identifier {
@@ -82,7 +84,7 @@ class MainViewController: UIViewController {
                 }
                 
                 if error != nil {
-                    print(error!.localizedDescription)
+                    self.showAlertWith(title: "Error", message: error!.localizedDescription)
                 }
                 
             }
@@ -130,6 +132,8 @@ class MainViewController: UIViewController {
             resultsButton.isHidden = false
         }
     }
+    
+
     
     
 }

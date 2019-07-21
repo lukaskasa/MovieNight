@@ -10,9 +10,9 @@
 		801E3EC622E2144200F6780E /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801E3EC522E2144200F6780E /* Secrets.swift */; };
 		8096CC0222E0B5A5009B325D /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8096CC0122E0B5A5009B325D /* ImageDownloader.swift */; };
 		8096CC0422E0BA36009B325D /* PendingOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8096CC0322E0BA36009B325D /* PendingOperations.swift */; };
-		8096CC0922E0BBF3009B325D /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8096CC0822E0BBF3009B325D /* NetworkError.swift */; };
 		8096CC1022E1A387009B325D /* ImageDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8096CC0F22E1A387009B325D /* ImageDownload.swift */; };
 		8096CC1222E2032E009B325D /* Imageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8096CC1122E2032E009B325D /* Imageable.swift */; };
+		809A3CC122E477B800D85381 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809A3CC022E477B800D85381 /* UIViewController.swift */; };
 		80BF3FA022D265C8006492E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BF3F9F22D265C8006492E5 /* AppDelegate.swift */; };
 		80BF3FA222D265C8006492E5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BF3FA122D265C8006492E5 /* MainViewController.swift */; };
 		80BF3FA522D265C8006492E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80BF3FA322D265C8006492E5 /* Main.storyboard */; };
@@ -55,9 +55,9 @@
 		801E3EC522E2144200F6780E /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		8096CC0122E0B5A5009B325D /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		8096CC0322E0BA36009B325D /* PendingOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingOperations.swift; sourceTree = "<group>"; };
-		8096CC0822E0BBF3009B325D /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		8096CC0F22E1A387009B325D /* ImageDownload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownload.swift; sourceTree = "<group>"; };
 		8096CC1122E2032E009B325D /* Imageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Imageable.swift; sourceTree = "<group>"; };
+		809A3CC022E477B800D85381 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		80BF3F9C22D265C8006492E5 /* Movie Night.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movie Night.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80BF3F9F22D265C8006492E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80BF3FA122D265C8006492E5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +109,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		809A3CBF22E477A600D85381 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				809A3CC022E477B800D85381 /* UIViewController.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		80BF3F9322D265C8006492E5 = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +142,7 @@
 				80BF3FB222D85A8A006492E5 /* Models */,
 				80BF3FB122D314FC006492E5 /* Views */,
 				80BF3FBB22D9D215006492E5 /* Controllers */,
+				809A3CBF22E477A600D85381 /* Extensions */,
 				80BF3F9F22D265C8006492E5 /* AppDelegate.swift */,
 				80BF3FA622D265C9006492E5 /* Assets.xcassets */,
 				80BF3FAB22D265C9006492E5 /* Info.plist */,
@@ -258,7 +267,6 @@
 			isa = PBXGroup;
 			children = (
 				80EB9A4322DF760900F53D05 /* APIError.swift */,
-				8096CC0822E0BBF3009B325D /* NetworkError.swift */,
 			);
 			path = Error;
 			sourceTree = "<group>";
@@ -341,13 +349,13 @@
 				80BF3FC722DB1FE4006492E5 /* GenreDatasource.swift in Sources */,
 				80BF3FBD22D9D549006492E5 /* GenreController.swift in Sources */,
 				80EB9A2222DDADD700F53D05 /* DecadeController.swift in Sources */,
-				8096CC0922E0BBF3009B325D /* NetworkError.swift in Sources */,
 				80EB9A2922DDB68500F53D05 /* DecadeViewModel.swift in Sources */,
 				80BF3FDD22DCEC3F006492E5 /* ActorDatasource.swift in Sources */,
 				80EB9A3D22DF192A00F53D05 /* APIClient.swift in Sources */,
 				80BF3FBA22D9D140006492E5 /* Watcher.swift in Sources */,
 				80EB9A4422DF760900F53D05 /* APIError.swift in Sources */,
 				80BF3FD022DC5F04006492E5 /* GenreDelegate.swift in Sources */,
+				809A3CC122E477B800D85381 /* UIViewController.swift in Sources */,
 				8096CC1222E2032E009B325D /* Imageable.swift in Sources */,
 				80EB9A3422DE0A4800F53D05 /* ResultController.swift in Sources */,
 				80BF3FDB22DCEB91006492E5 /* ActorViewModel.swift in Sources */,

@@ -20,8 +20,13 @@ class GenreController: UITableViewController {
     var delegate: GenreDelegate?
     
     var mainController: MainViewController?
-    
     var firstWatcher: Bool = false
+    
+    var error: Bool? {
+        didSet {
+            checkForConnection(error!)
+        }
+    }
     
     var genres: [MovieGenre]? {
         didSet {
@@ -36,8 +41,6 @@ class GenreController: UITableViewController {
         
         // Setup
         disableNavigation()
-        
-        
         stateBarButtonItem.width = view.frame.size.width
         self.navigationController?.setToolbarHidden(false, animated: false)
     }
@@ -70,9 +73,6 @@ class GenreController: UITableViewController {
     
     // MARK: - Helper Methods
     
-    /**
-     
-     */
     func setupTableview() {
         tableView.allowsMultipleSelection = true
         tableView.delegate = delegate
@@ -87,6 +87,41 @@ class GenreController: UITableViewController {
     
     func disableNavigation() {
         nextBarButton.isEnabled = false
+    }
+    
+    func checkForConnection(_ error: Bool) {
+        if error {
+            performActionOnAlert(title: "No connection", message: "Internet connection could not be established! Please try again.")
+        }
+    }
+    
+    /**
+     Sets up and shows an Alert to iniate a new request
+     
+     - Parameters:
+     - title: The title of the alert
+     - message: The message of the alert
+     
+     - Returns: Void
+     */
+    func performActionOnAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let tryAgainAction = UIAlertAction(title: "Try again", style: .default, handler: { _ in
+            self.client.getGenres { genres, error in
+                if let genres = genres {
+                    self.genres = genres["genres"]
+                }
+                
+                if error != nil {
+                    self.performActionOnAlert(title: "No connection", message: "Internet connection could not be established! Please try again.")
+                }
+            }
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(tryAgainAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: false, completion: nil)
     }
     
 }
