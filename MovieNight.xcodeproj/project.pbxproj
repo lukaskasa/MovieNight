@@ -120,7 +120,7 @@
 		80BF3F9322D265C8006492E5 = {
 			isa = PBXGroup;
 			children = (
-				80BF3F9E22D265C8006492E5 /* Movie Night */,
+				80BF3F9E22D265C8006492E5 /* MovieNight */,
 				80BF3F9D22D265C8006492E5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -133,7 +133,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		80BF3F9E22D265C8006492E5 /* Movie Night */ = {
+		80BF3F9E22D265C8006492E5 /* MovieNight */ = {
 			isa = PBXGroup;
 			children = (
 				80EB9A3B22DF190900F53D05 /* Networking */,
@@ -147,7 +147,7 @@
 				80BF3FA622D265C9006492E5 /* Assets.xcassets */,
 				80BF3FAB22D265C9006492E5 /* Info.plist */,
 			);
-			path = "Movie Night";
+			path = MovieNight;
 			sourceTree = "<group>";
 		};
 		80BF3FB122D314FC006492E5 /* Views */ = {
@@ -274,9 +274,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		80BF3F9B22D265C8006492E5 /* Movie Night */ = {
+		80BF3F9B22D265C8006492E5 /* MovieNight */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 80BF3FAE22D265C9006492E5 /* Build configuration list for PBXNativeTarget "Movie Night" */;
+			buildConfigurationList = 80BF3FAE22D265C9006492E5 /* Build configuration list for PBXNativeTarget "MovieNight" */;
 			buildPhases = (
 				80BF3F9822D265C8006492E5 /* Sources */,
 				80BF3F9922D265C8006492E5 /* Frameworks */,
@@ -286,7 +286,7 @@
 			);
 			dependencies = (
 			);
-			name = "Movie Night";
+			name = MovieNight;
 			productName = "Movie Night";
 			productReference = 80BF3F9C22D265C8006492E5 /* Movie Night.app */;
 			productType = "com.apple.product-type.application";
@@ -306,7 +306,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 80BF3F9722D265C8006492E5 /* Build configuration list for PBXProject "Movie Night" */;
+			buildConfigurationList = 80BF3F9722D265C8006492E5 /* Build configuration list for PBXProject "MovieNight" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -319,7 +319,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				80BF3F9B22D265C8006492E5 /* Movie Night */,
+				80BF3F9B22D265C8006492E5 /* MovieNight */,
 			);
 		};
 /* End PBXProject section */
@@ -457,7 +457,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -512,7 +512,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -528,13 +528,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 95K8REC8NW;
-				INFOPLIST_FILE = "Movie Night/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/MovieNight/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.lukaskasakaitis.Movie-Night";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lukaskasakaitis.MovieNight;
+				PRODUCT_NAME = "Movie Night";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -546,13 +547,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 95K8REC8NW;
-				INFOPLIST_FILE = "Movie Night/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/MovieNight/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.lukaskasakaitis.Movie-Night";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lukaskasakaitis.MovieNight;
+				PRODUCT_NAME = "Movie Night";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -561,7 +563,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		80BF3F9722D265C8006492E5 /* Build configuration list for PBXProject "Movie Night" */ = {
+		80BF3F9722D265C8006492E5 /* Build configuration list for PBXProject "MovieNight" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				80BF3FAC22D265C9006492E5 /* Debug */,
@@ -570,7 +572,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		80BF3FAE22D265C9006492E5 /* Build configuration list for PBXNativeTarget "Movie Night" */ = {
+		80BF3FAE22D265C9006492E5 /* Build configuration list for PBXNativeTarget "MovieNight" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				80BF3FAF22D265C9006492E5 /* Debug */,

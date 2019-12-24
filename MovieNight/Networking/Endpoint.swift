@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 /// Type to provide URLRequests for defined API Requests
 protocol Endpoint {
     var base: String { get }
